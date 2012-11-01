@@ -1,7 +1,7 @@
 <div class="span12">
   <div class="box">
     <%= simple_form_for :product, :url => products_path do |f| %>
-      # TODO : 物品型號
+      <%= f.input :category_id, :as => :select, :collection => Category.all %> 
       <%= f.input :product_spec, :label => "物品規格" %>
       <%= f.input :apple_care_expired_at, :label => "保固日期" %>
       <%= f.input :has_invoice, :label => "原始發票" %>

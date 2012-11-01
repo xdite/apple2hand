@@ -11,3 +11,10 @@ user1          = User.new(:name => "xdite", :email => "xuite.joke@gmail.com")
 user1.fb_id    = "577398551"
 user1.password = Devise.friendly_token[0, 20]
 user1.save
+
+
+["iMac", "Macbook Pro", "Macbook Air", "Mac mini"].each do |c|
+  category = Category.new
+  category.name = c
+  category.save
+end
