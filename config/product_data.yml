@@ -1,0 +1,12 @@
+defaults: &defaults
+  trade_types:
+    - 面交
+    - 郵寄
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

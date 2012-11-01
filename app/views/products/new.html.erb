@@ -2,16 +2,19 @@
   <div class="box">
     <%= simple_form_for :product, :url => products_path do |f| %>
       <%= f.input :category_id, :as => :select, :collection => Category.all %> 
-      <%= f.input :product_spec, :label => "物品規格" %>
-      <%= f.input :apple_care_expired_at, :label => "保固日期" %>
-      <%= f.input :has_invoice, :label => "原始發票" %>
-      <%= f.input :accessories, :label => "隨機配件" %>
-      <%= f.input :description, :label => "物品敘述" %>
-      <%= f.input :extenal_link, :label => "物品連結" %>
-      <%= f.input :trade_area, :label => "交易地區" %>
-      <%= f.input :trade_type, :label => "交易方式" %>
+      <%= f.input :product_spec, :label => "物品規格", :placeholder => "ipad2 wifi+3g 32G 黑色" %>
+
+      <%= f.input :apple_care_expired_at, :as => :date, :start_year => Date.today.year - 15,
+                              :end_year => Date.today.year + 3,
+                              :order => [:day, :month, :year], :label => "保固日期" %>
+      <%= f.input :has_invoice,     :as => :radio_buttons, :label => "原始發票" %>
+      <%= f.input :accessories, :label => "隨機配件", :placeholder => "原廠盒裝配件" %>
+      <%= f.input :description, :as => :text, :label => "物品敘述", :input_html => { :class => "input-xxlarge", :rows => 10} %>
+      <%= f.input :extenal_link, :label => "物品連結", :input_html => { :class => "input-xxlarge"} , :placeholder => "http://tw.bid.yahoo/xxxxx" %>
+      <%= f.input :trade_area, :as => :select, :collection => AreaData.county_codes,  :label => "交易地區" %>
+      <%= f.input :trade_type, :as => :select, :collection => ProductData.trade_types, :label => "交易方式" %>
       <%= f.input :trade_price, :label => "交易價格" %>
-      <%= f.input :extra_note, :label => "其他備註" %>
+      <%= f.input :extra_note, :as => :text ,:label => "其他備註", :input_html => { :class => "input-xxlarge", :rows => 10} %>
 
       <div class="form-actions">
         <%= f.submit "Submit", :disable_with => 'Submiting...' , :class => "btn btn-primary" %>

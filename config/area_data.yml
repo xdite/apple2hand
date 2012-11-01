@@ -1,0 +1,27 @@
+defaults: &defaults
+  county_codes:
+    - 基隆 
+    - 新北市
+    - 台北市
+    - 桃園
+    - 新竹
+    - 苗栗
+    - 台中市
+    - 彰化
+    - 南投
+    - 雲林
+    - 嘉義
+    - 台南市
+    - 高雄市
+    - 屏東
+    - 宜蘭
+    - 花蓮
+    - 台東
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
