@@ -27,6 +27,10 @@ gem "omniauth"
 gem "oauth2"
 gem "omniauth-facebook"
 
+gem "open_graph_helper"
+gem "google_plus_helper"
+
+
 gem 'seo_helper', '~> 1.0'
 
 gem "settingslogic"

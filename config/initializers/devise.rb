@@ -84,6 +84,8 @@ Devise.setup do |config|
   # Setup a pepper to generate the encrypted password.
   # config.pepper = "86e905a9b6f45557d1a6fbfcf744d4ae25d11510bbc772333570b835aac0f86b3128726879660da299ed29ab6f8032314458529ae0dd6d411c741e02a0b3175e"
 
+  config.omniauth :facebook, Setting.facebook_app_id, Setting.facebook_secret, :scope => "email"
+
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
   # confirming his account. For instance, if set to 2.days, the user will be
@@ -125,7 +127,7 @@ Devise.setup do |config|
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
   # config.timeout_in = 30.minutes
-  
+
   # If true, expires auth token on session timeout.
   # config.expire_auth_token_on_timeout = false
 
