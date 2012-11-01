@@ -9,10 +9,11 @@ class CreateProducts < ActiveRecord::Migration
       t.string  :description
       t.string  :extenal_link
       t.string  :contact_type
-      t.string  :trad_area
+      t.string  :trade_area
       t.string  :trade_type
-      t.string  :trad_price
+      t.string  :trade_price
       t.text    :extra_note
+      t.integer :user_id
       t.timestamps
     end
   end
