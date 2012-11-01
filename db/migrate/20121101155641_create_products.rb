@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration
       t.integer :category_id
       t.string  :product_spec
       t.date    :apple_care_expired_at
-      t.boolen  :has_invoice, :default => false
+      t.boolean  :has_invoice, :default => false
       t.text    :accessories
       t.string  :description
       t.string  :extenal_link
