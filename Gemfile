@@ -57,9 +57,6 @@ group :development do
   gem "annotate"
 end
 
-group :production do
-  gem 'newrelic_rpm'
-end
 
 
 # To use ActiveModel has_secure_password
