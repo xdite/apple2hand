@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   def create
     @product = current_user.products.build(params[:product])
     if @product.save
-      redirect_to product_pat(@product)
+      redirect_to product_path(@product)
     else
       render :new
     end
